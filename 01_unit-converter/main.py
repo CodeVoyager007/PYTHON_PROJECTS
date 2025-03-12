@@ -68,6 +68,6 @@ if st.button("Convert 🔥"):
 if st.session_state.result_text:
     st.markdown(f'<div class="result-box">{st.session_state.result_text}</div>', unsafe_allow_html=True)
 
-    # ✅ **Fixed Copy Button - Uses Streamlit Clipboard API**
-    st.code(st.session_state.result_text, language="plaintext")  # This makes it selectable
+    #copy button
+    st.code(st.session_state.result_text, language="plaintext") 
     st.button("📋 Copy Result", on_click=lambda: st.session_state.update({"clipboard": st.session_state.result_text}))
