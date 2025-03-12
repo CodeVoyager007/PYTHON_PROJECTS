@@ -1,10 +1,7 @@
 import streamlit as st
-import pyperclip
-
 
 st.set_page_config(page_title="Unit Converter", page_icon="⚡", layout="centered")
 
-# Custom CSS for styling
 st.markdown("""
     <style>
         body { background-color: black; color: white; }
@@ -44,7 +41,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Unit categories and conversions
 CATEGORIES = {
     "Length": {"Meter": 1, "Kilometer": 0.001, "Centimeter": 100, "Millimeter": 1000},
     "Weight": {"Gram": 1, "Kilogram": 0.001, "Pound": 0.00220462},
@@ -52,7 +48,6 @@ CATEGORIES = {
 }
 
 st.title("⚡ Advanced Unit Converter")
-
 
 category = st.selectbox("Select Category", list(CATEGORIES.keys()), index=0)
 from_unit = st.selectbox("Convert From", ["Choose an option"] + list(CATEGORIES[category].keys()), index=0)
@@ -67,16 +62,12 @@ if st.button("Convert 🔥"):
     if from_unit == "Choose an option" or to_unit == "Choose an option":
         st.warning("⚠ Please select valid units for conversion!")
     else:
-        
         result = (value / CATEGORIES[category][from_unit]) * CATEGORIES[category][to_unit]
         st.session_state.result_text = f"{value} {from_unit} = {result:.4f} {to_unit}"
-
 
 if st.session_state.result_text:
     st.markdown(f'<div class="result-box">{st.session_state.result_text}</div>', unsafe_allow_html=True)
 
-  #copy button
-    if st.button("📋 Copy Result"):
-        pyperclip.copy(st.session_state.result_text)
-        st.success("✅ Copied to clipboard!")
-
+    # ✅ **Fixed Copy Button - Uses Streamlit Clipboard API**
+    st.code(st.session_state.result_text, language="plaintext")  # This makes it selectable
+    st.button("📋 Copy Result", on_click=lambda: st.session_state.update({"clipboard": st.session_state.result_text}))
