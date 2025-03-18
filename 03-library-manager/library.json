@@ -1,9 +1,9 @@
 [
     {
-        "title": "aisha",
-        "author": "ayesha",
-        "year": 2025,
-        "genre": "comedy",
+        "title": "harry potter",
+        "author": "JK.Rowling",
+        "year": 2002,
+        "genre": "fiction",
         "read_status": true
     }
 ]
