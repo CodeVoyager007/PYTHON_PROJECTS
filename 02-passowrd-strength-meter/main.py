@@ -3,7 +3,7 @@ import re
 import random
 import string
 
-# Custom CSS for dark mode styling with animations
+
 st.markdown("""
     <style>
         body { 
