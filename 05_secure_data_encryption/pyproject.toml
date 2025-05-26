@@ -1,5 +1,5 @@
 [project]
-name = "secure-data-encryption"
+name = "secure_data_encryption"
 version = "1.0.0"
 description = "A Streamlit-based secure data storage and retrieval system with PBKDF2 hashing and Fernet encryption"
 readme = "README.md"
@@ -17,6 +17,11 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/yourusername/secure-data-encryption"
 Documentation = "https://github.com/yourusername/secure-data-encryption#readme"
+
+[tool.streamlit]
+# Streamlit-specific configurations
+page_title = "Secure Data Encryption"
+layout = "wide"
 
 [build-system]
 requires = ["hatchling"]
