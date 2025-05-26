@@ -1,0 +1,31 @@
+[project]
+name = "secure-data-encryption"
+version = "1.0.0"
+description = "A Streamlit-based secure data storage and retrieval system with PBKDF2 hashing and Fernet encryption"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+dependencies = [
+    "streamlit>=1.45.1",
+    "cryptography>=42.0.5",
+    "python-dotenv>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/secure-data-encryption"
+Documentation = "https://github.com/yourusername/secure-data-encryption#readme"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
