@@ -8,7 +8,7 @@ class Student:
         print(f"Student Name: {self.name}, Marks: {self.marks}")
 
 # Example
-s = Student("Ayesha Mughal", 16)
+s = Student("Ayesha Mughal", 100)
 s.display()
 
 
