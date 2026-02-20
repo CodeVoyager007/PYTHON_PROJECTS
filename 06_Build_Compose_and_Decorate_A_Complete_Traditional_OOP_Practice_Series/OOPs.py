@@ -21,11 +21,12 @@ class Counter:
 
     @classmethod
     def show_count(cls):
-        print(f"Total objects created: {cls.count}")
+        print(f"Total Objects Created: {cls.count}")
 
 # Example
 c1 = Counter()
 c2 = Counter()
+c3 = Counter()
 Counter.show_count()
 
 
@@ -38,14 +39,14 @@ class Car:
         print(f"{self.brand} car started.")
 
 # Example
-car = Car("Toyota")
+car = Car("Aston Martin")
 print(car.brand)
 car.start()
 
 
 # 4. Class Variables and Class Methods
 class Bank:
-    bank_name = "ABC Bank"
+    bank_name = "Regal Bank"
 
     @classmethod
     def change_bank_name(cls, name):
@@ -54,9 +55,9 @@ class Bank:
 # Example
 b1 = Bank()
 b2 = Bank()
-print(b1.bank_name)  # ABC Bank
-Bank.change_bank_name("XYZ Bank")
-print(b2.bank_name)  # XYZ Bank
+print(b1.bank_name)  # Regal Bank
+Bank.change_bank_name("Sumit Bank")
+print(b2.bank_name)  # Sumit Bank
 
 
 # 5. Static Variables and Static Methods
@@ -333,3 +334,18 @@ class Countdown:
 # Example
 for i in Countdown(5):
     print(i)
+
+class Flyer:
+    def fly(self):
+        print("i can fly")
+
+class Swimmer:
+    def swim(self):
+        print("i can swim")
+
+class Duck(Flyer, Swimmer):
+    pass
+#example
+duck=Duck()
+duck.fly()
+duck.swim()
